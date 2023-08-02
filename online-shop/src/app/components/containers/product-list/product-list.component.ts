@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { getProductsDetail } from 'src/app/mocks/products.mocks';
+import { Observable } from 'rxjs';
 import { ProductDetail } from 'src/app/modules/shared/types/products.types';
-import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,11 +9,11 @@ import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent {
-  constructor(private shoppingCartService: ShoppingCartService) {}
+  constructor(private productsService: ProductsService) {}
 
-  productsList = getProductsDetail(30);
+  productsList!: Observable<ProductDetail[]>;
 
-  shoppingCartList: ProductDetail[] | undefined;
-
-  static getShoppingCartList: any;
+  ngOnInit(): Observable<ProductDetail[]> {
+    return (this.productsList = this.productsService.getProductsList());
+  }
 }

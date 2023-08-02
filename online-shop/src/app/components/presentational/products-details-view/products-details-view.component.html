@@ -1,9 +1,9 @@
-<div *ngIf="productDetail">
+<div *ngIf="productDetail | async as productDetail">
   <h1>PRODUCT: {{ productDetail.name }}</h1>
   <button>EDIT</button>
   <button>DELETE</button>
   <p>NAME: {{ productDetail.name }}</p>
-  <p>CATEGORY: {{ productDetail.category }}</p>
+  <p>CATEGORY: {{ productDetail.categoryName }}</p>
   <p>PRICE: {{ productDetail.price }}</p>
   <p>DESCRIPTION: {{ productDetail.description }}</p>
 </div>

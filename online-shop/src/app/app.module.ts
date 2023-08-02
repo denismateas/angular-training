@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductDetailsComponent } from './components/containers/product-details/product-details.component';
@@ -11,7 +11,6 @@ import { IconButtonComponent } from './modules/shared/components/presentational/
 import { ShoppingCartDetailsViewComponent } from './modules/shopping-cart/components/presentational/shopping-cart-details-view/shopping-cart-details-view.component';
 import { ShoppingCartDetailsComponent } from './modules/shopping-cart/components/containers/shopping-cart-details/shopping-cart-details.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +26,7 @@ import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module
     AppRoutingModule,
     IconButtonComponent,
     ShoppingCartModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

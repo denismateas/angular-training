@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ProductDetail } from 'src/app/modules/shared/types/products.types';
 
 @Component({
@@ -7,5 +8,5 @@ import { ProductDetail } from 'src/app/modules/shared/types/products.types';
   styleUrls: ['./products-details-view.component.scss'],
 })
 export class ProductsDetailsViewComponent {
-  @Input() productDetail: ProductDetail | undefined;
+  @Input() productDetail?: Observable<ProductDetail> | undefined;
 }

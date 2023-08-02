@@ -4,6 +4,7 @@ export function getShoppingCartDetail(
 ): ShoppingCartDetail {
   return {
     name: name,
+    id: Math.floor(Math.random() * 100 + 1).toString(),
     category: 'an interesting category',
     price: 999,
     description: 'au motoare zburatoare',

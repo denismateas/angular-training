@@ -8,8 +8,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class IconButtonComponent {
   @Input() iconType: string | undefined;
+
   @Output() onClick = new EventEmitter<MouseEvent>();
-  public handleMouseEvent(event: MouseEvent) {
+
+  public handleMouseEvent(event: MouseEvent): void {
     this.onClick.emit(event);
   }
 }

@@ -6,18 +6,20 @@
     <button class="checkout">CHECKOUT</button>
     <table>
       <tr>
-        <th>Category</th>
         <th>Product name</th>
+        <th>Category</th>
         <th>Price</th>
         <th>Quantity</th>
       </tr>
       <tr *ngFor="let shopping of shoppingCartDetails">
-        <td>{{ shopping.category }}</td>
         <td>{{ shopping.name }}</td>
+        <td>{{ shopping.categoryName }}</td>
         <td>{{ shopping.price }} $</td>
         <td>{{ shopping.quantity }}</td>
         <td>
-          <button><app-icon-button></app-icon-button></button>
+          <app-icon-button
+            (click)="deleteProductFromShoppingCart(shopping)"
+          ></app-icon-button>
         </td>
       </tr>
     </table>

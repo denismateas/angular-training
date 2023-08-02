@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {
-  getProductDetail,
-  getProductsDetail,
-} from 'src/app/mocks/products.mocks';
+import { Observable } from 'rxjs';
 import { ProductDetail } from 'src/app/modules/shared/types/products.types';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product-details',
@@ -12,18 +10,19 @@ import { ProductDetail } from 'src/app/modules/shared/types/products.types';
   styleUrls: ['./product-details.component.scss'],
 })
 export class ProductDetailsComponent implements OnInit {
-  productDetail: ProductDetail | undefined;
-  constructor(private route: ActivatedRoute) {}
+  productDetail: Observable<ProductDetail> | undefined;
+
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService
+  ) {}
 
   ngOnInit(): void {
     this.getProductsDetails();
   }
-  nullUndefined(text: string | null) {
-    if (text == null) return undefined;
-    return text;
-  }
+
   getProductsDetails(): void {
-    const name = String(this.route.snapshot.paramMap.get('name'));
-    this.productDetail = getProductDetail(this.nullUndefined(name));
+    const id = String(this.route.snapshot.paramMap.get('id'));
+    this.productDetail = this.productsService.getProduct(id);
   }
 }
