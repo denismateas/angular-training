@@ -1,0 +1,29 @@
+<body>
+  <div *ngIf="productsList">
+    <div>
+      <h1>Products</h1>
+      <button routerLink="/shopping-cart">GoToCart</button>
+      <button>AddProduct</button>
+    </div>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Product name</th>
+        <th>Price</th>
+        <th>View</th>
+        <th>AddItem</th>
+      </tr>
+      <tr *ngFor="let product of productsList | async">
+        <td>{{ product.id }}</td>
+        <td>{{ product.categoryName }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.price }} $</td>
+        <td routerLink="/product-detail/{{ product.id }}">
+          <button>></button>
+        </td>
+        <td><button (click)="addProduct(product)">+</button></td>
+      </tr>
+    </table>
+  </div>
+</body>

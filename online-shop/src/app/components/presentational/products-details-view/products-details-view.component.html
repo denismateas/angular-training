@@ -1,0 +1,12 @@
+<div *ngIf="productDetail | async as productDetail">
+  <h1>PRODUCT: {{ productDetail.name }}</h1>
+  <button>EDIT</button>
+  <button>DELETE</button>
+  <p>NAME: {{ productDetail.name }}</p>
+  <p>CATEGORY: {{ productDetail.categoryName }}</p>
+  <p>PRICE: {{ productDetail.price }}</p>
+  <p>DESCRIPTION: {{ productDetail.description }}</p>
+</div>
+<div>
+  <button routerLink="/product-list">BACK</button>
+</div>

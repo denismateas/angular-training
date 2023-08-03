@@ -1,0 +1,27 @@
+<body>
+  <div *ngIf="shoppingCartDetails">
+    <div>
+      <h1>Shopping Cart</h1>
+    </div>
+    <button class="checkout">CHECKOUT</button>
+    <table>
+      <tr>
+        <th>Product name</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Quantity</th>
+      </tr>
+      <tr *ngFor="let shopping of shoppingCartDetails">
+        <td>{{ shopping.name }}</td>
+        <td>{{ shopping.categoryName }}</td>
+        <td>{{ shopping.price }} $</td>
+        <td>{{ shopping.quantity }}</td>
+        <td>
+          <app-icon-button
+            (click)="deleteProductFromShoppingCart(shopping)"
+          ></app-icon-button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
