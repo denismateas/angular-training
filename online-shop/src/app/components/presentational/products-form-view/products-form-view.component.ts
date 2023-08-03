@@ -13,6 +13,7 @@ export class ProductsFormViewComponent {
     private fb: FormBuilder,
     private productsService: ProductsService
   ) {}
+
   @Input() myForm!: FormGroup;
 
   productToBeAdded!: ProductForm;

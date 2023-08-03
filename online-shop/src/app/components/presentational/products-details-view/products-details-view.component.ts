@@ -10,6 +10,7 @@ import { ProductsService } from 'src/app/services/products.service';
 })
 export class ProductsDetailsViewComponent {
   constructor(private productsService: ProductsService) {}
+
   @Input() productDetail?: Observable<ProductDetail> | undefined;
 
   delete(id: string): void {

@@ -23,6 +23,7 @@ export class ProductsEditFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.productDetail = this.productsService.selectedProduct;
+
     this.myForm = this.fb.group({
       categoryId: '5733c530-5b0c-401f-8aed-2a1af36ef7ea',
       name: this.productDetail?.name,
@@ -33,6 +34,7 @@ export class ProductsEditFormComponent implements OnInit {
       categoryName: '',
       categoryDescription: 'new kitchen supplies',
     });
+
     this.id = String(this.route.snapshot.paramMap.get('id'));
   }
 }

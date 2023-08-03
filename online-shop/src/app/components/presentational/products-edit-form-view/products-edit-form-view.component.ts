@@ -14,6 +14,7 @@ export class ProductsEditFormViewComponent {
     private fb: FormBuilder,
     private productsService: ProductsService
   ) {}
+
   @Input() myForm!: FormGroup;
   @Input() id!: string;
   @Input() productDetail?: ProductDetail;

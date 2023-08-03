@@ -8,6 +8,7 @@ import { ShoppingCartService } from 'src/app/modules/shopping-cart/services/shop
 })
 export class ShoppingCartDetailsViewComponent {
   constructor(private shoppingCartService: ShoppingCartService) {}
+
   @Input() shoppingCartDetails?: ShoppingCartDetail[] | undefined;
 
   deleteProductFromShoppingCart(shopping: ShoppingCartDetail): void {

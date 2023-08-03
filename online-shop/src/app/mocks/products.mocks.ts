@@ -15,7 +15,9 @@ export function getProductDetail(
 
 export function getProductsDetail(howMany: number): ProductDetail[] {
   const productsDetail = [];
+
   for (let i = 0; i < howMany; i++)
     productsDetail.push(getProductDetail(`product_${i}`, `${i}`));
+
   return productsDetail;
 }

@@ -85,6 +85,7 @@ export class ProductsService {
       imageUrl: myForm.controls['imageUrl']?.value,
       categoryId: '5733c530-5b0c-401f-8aed-2a1af36ef7ea',
     };
+
     this.newProductToBeAdded = {
       name: this.productToBeAdded.name,
       price: this.productToBeAdded.price,
@@ -92,6 +93,7 @@ export class ProductsService {
       description: this.productToBeAdded.description,
       id: id,
     };
+
     this.http
       .put<unknown>(
         environment.apiUrl + '/product?id=' + id,
@@ -100,14 +102,6 @@ export class ProductsService {
       .subscribe();
 
     this.productsList = undefined;
-
-    // for (let i = 0; i < this.productsList.length; i++)
-    //   if (id == this.productsList[i].id) {
-    //     this.productsList[i].id = this.newProductToBeAdded.id;
-    //     this.productsList[i].price = this.newProductToBeAdded.price;
-    //     this.productsList[i].description = this.newProductToBeAdded.description;
-    //   }
-    //   console.log()
 
     alert('Product updated successfully');
   }
