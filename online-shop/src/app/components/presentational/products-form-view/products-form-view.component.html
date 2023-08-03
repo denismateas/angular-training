@@ -1,0 +1,15 @@
+<body style="padding-left: 2rem">
+  <div>
+    <h1>Add a product</h1>
+  </div>
+  <form [formGroup]="myForm">
+    <label for="name">Name: </label>
+    <input placeholder="name" formControlName="name" /><br />
+    <label for="price">Price: </label>
+    <input placeholder="price" formControlName="price" /><br />
+    <label for="description">Description: </label>
+    <input placeholder="description" formControlName="description" /><br />
+
+    <button (click)="add()">Submit</button>
+  </form>
+</body>

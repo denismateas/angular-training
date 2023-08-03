@@ -1,0 +1,16 @@
+<body style="padding-left: 2rem">
+  <div>
+    <div>
+      <form [formGroup]="myForm">
+        <h1>Edit product</h1>
+        <label for="name">Name: </label>
+        <input formControlName="name" /><br />
+        <label for="price">Price: </label>
+        <input formControlName="price" /><br />
+        <label for="description">Description: </label>
+        <input formControlName="description" /><br />
+        <button (click)="update()">Submit</button>
+      </form>
+    </div>
+  </div>
+</body>

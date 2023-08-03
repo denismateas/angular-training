@@ -13,4 +13,8 @@ export class ShoppingCartDetailsViewComponent {
   deleteProductFromShoppingCart(shopping: ShoppingCartDetail): void {
     return this.shoppingCartService.deleteProductFromShoppingCart(shopping);
   }
+
+  goCheckout(): void {
+    return this.shoppingCartService.checkout();
+  }
 }

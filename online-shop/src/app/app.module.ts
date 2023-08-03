@@ -11,6 +11,12 @@ import { IconButtonComponent } from './modules/shared/components/presentational/
 import { ShoppingCartDetailsViewComponent } from './modules/shopping-cart/components/presentational/shopping-cart-details-view/shopping-cart-details-view.component';
 import { ShoppingCartDetailsComponent } from './modules/shopping-cart/components/containers/shopping-cart-details/shopping-cart-details.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
+import { ProductsFormComponent } from './components/containers/products-form/products-form.component';
+import { ProductsEditFormComponent } from './components/containers/products-edit-form/products-edit-form.component';
+import { ProductsFormViewComponent } from './components/presentational/products-form-view/products-form-view.component';
+import { ProductsEditFormViewComponent } from './components/presentational/products-edit-form-view/products-edit-form-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +26,10 @@ import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module
     ProductsListViewComponent,
     ShoppingCartDetailsViewComponent,
     ShoppingCartDetailsComponent,
+    ProductsFormComponent,
+    ProductsEditFormComponent,
+    ProductsFormViewComponent,
+    ProductsEditFormViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -27,6 +37,7 @@ import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module
     IconButtonComponent,
     ShoppingCartModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
