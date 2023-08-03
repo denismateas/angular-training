@@ -5,7 +5,7 @@ export function getShoppingCartDetail(
   return {
     name: name,
     id: Math.floor(Math.random() * 100 + 1).toString(),
-    category: 'an interesting category',
+    categoryName: 'an interesting category',
     price: 999,
     description: 'au motoare zburatoare',
     quantity: 5,
@@ -14,7 +14,9 @@ export function getShoppingCartDetail(
 
 export function getShoppingCartDetails(howMany: number): ShoppingCartDetail[] {
   const productsDetail = [];
+
   for (let i = 0; i < howMany; i++)
     productsDetail.push(getShoppingCartDetail(`product_${i}`));
+
   return productsDetail;
 }
